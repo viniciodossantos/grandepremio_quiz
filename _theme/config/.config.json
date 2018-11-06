@@ -1,0 +1,27 @@
+{
+	"dev": {
+		
+		"css": "assets/css/*.css",
+		"cssAll": "assets/scss/**/*.scss",
+		"js": "assets/js/**/*.js",
+		"img": "assets/images/**/*.+(png|jpg|jpeg|gif|svg)",
+		"fonts": "assets/fonts/*.+(eot|svg|ttf|woff|woff2)",
+		"html": "index.html"
+	},
+
+	"build": {
+		"css": "../src/assets/css/*.css",
+		"js": "../src/assets/js/*.js",
+		"img": "../src/assets/images/**/*.+(png|jpg|jpeg|gif|svg)",
+		"fonts": "../src/assets/fonts/*.+(eot|svg|ttf|woff|woff2)",
+		"html": "../src/"
+	},
+
+	"destination": "../src/assets/",
+
+	"bs": {
+		"proxy": "http://localhost/quizgp/src/",
+		"port": "3000",
+		"browser": "chrome"
+	}
+}
