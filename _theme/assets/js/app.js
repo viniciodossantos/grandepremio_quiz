@@ -157,41 +157,260 @@ function Quiz(){
     var car = dragtostart.querySelector('.car');
     var questions = '';
     var start = false;
+    var listName = ["A - ","B - ","C - ","D - ","E - "]
+    
 
 
     var quiz_question = [
         {
-            "question"      :   "No período em que Sebastian Vettel foi campeão na F1, quantos pilotos foram titulares da Scuderia Ferrari?",
+            "question"      :   "A Shell estampa o carro de um piloto brasileiro na Indy 500. Qual?",
             "image"         :   "assets/images/quiz/1.jpg",
-            "mobile"         :   "assets/images/quiz/1mobile.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/1.jpg",
             "choices"       :   [
-                                    "2 pilotos",
-                                    "3 pilotos",
-                                    "4 pilotos",
-                                    "5 pilotos"
+                                    "Helio Castroneves",
+                                    "Pietro Fittipaldi",
+                                    "Matheus Leist",
+                                    "Tony Kanaan"
                                 ],
             "answer"       :   ""
         },
         {
-            "question"      :   "No período em que Sebastian Vettel foi campeão na F1, quantos pilotos foram titulares da Scuderia Ferrari?",
+            "question"      :   "Como se chama o chefe da equipe Shell Racing na Stock Car?",
             "image"         :   "assets/images/quiz/2.jpg",
-            "mobile"         :   "assets/images/quiz/1mobile.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/2.jpg",
             "choices"       :   [
-                                    "2 pilotos",
-                                    "3 pilotos",
-                                    "4 pilotos",
-                                    "5 pilotos"
+                                    "Átila Abreu",
+                                    "Rosinei Campos",
+                                    "Duda Pamplona",
+                                    "Thiago Meneghel"
+                                ],
+            "answer"       :   ""
+        }/*,
+        {
+            "question"      :   "Quantas equipes Sebastian Vettel defendeu na F1 até 2018?",
+            "image"         :   "assets/images/quiz/3.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/3.jpg",
+            "choices"       :   [
+                                    "2",
+                                    "3",
+                                    "4",
+                                    "5"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "No GP do Brasil de 2017, Sebastian Vettel elogiou um piloto da Academia da Shell e o colocou como possível futuro brasileiro na F1. Hoje, ele faz parte da Academia Ferrari. Quem é?",
+            "image"         :   "assets/images/quiz/4.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/4.jpg",
+            "choices"       :   [
+                                    "Marcel Coletta",
+                                    "Gianluca Petecof",
+                                    "Enzo Fittipaldi",
+                                    "Caio Collet"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "Qual foi o palco da primeira vitória da Shell Racing na Stock Car 2018?",
+            "image"         :   "assets/images/quiz/5.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/5.jpg",
+            "choices"       :   [
+                                    "Curitiba",
+                                    "Londrina",
+                                    "Santa Cruz do Sul",
+                                    "Velopark"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "Kimi Räikkönen nasceu na cidade finlandesa de...",
+            "image"         :   "assets/images/quiz/6.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/6.jpg",
+            "choices"       :   [
+                                    "Espoo",
+                                    "Esboo",
+                                    "Eskoo",
+                                    "Estoo"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "Em que cidade nasceu Ricardo Zonta, piloto da Shell Racing?",
+            "image"         :   "assets/images/quiz/7.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/7.jpg",
+            "choices"       :   [
+                                    "Curitiba",
+                                    "Ribeirão Preto",
+                                    "São Paulo",
+                                    "Rio de Janeiro"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "Quais foram os convidados da Shell Racing na Corrida de Duplas da Stock Car em 2018?",
+            "image"         :   "assets/images/quiz/8.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/8.jpg",
+            "choices"       :   [
+                                    "Laurens Vanthoor e Mark Winterbottom",
+                                    "Felipe Massa e Pipo Derani",
+                                    "Mark Winterbottom e Felipe Massa",
+                                    "Laurens Vanthoor e Pipo Derani"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "Quantos títulos na Fórmula 1 tem a atual dupla da Ferrari?",
+            "image"         :   "assets/images/quiz/9.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/9.jpg",
+            "choices"       :   [
+                                    "4",
+                                    "5",
+                                    "3",
+                                    "6"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "O que quer dizer a sigla DTM?",
+            "image"         :   "assets/images/quiz/10.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/10.jpg",
+            "choices"       :   [
+                                    "Deutsche Tourenwagen Masters",
+                                    "Deutsche Touring Masters",
+                                    "Drivers Touring Masters",
+                                    "Driven To Mesmerize"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "Qual time da cidade de Átila Abreu disputa a Série B do Campeonato Brasileiro em 2018?",
+            "image"         :   "assets/images/quiz/11.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/11.jpg",
+            "choices"       :   [
+                                    "Guarani",
+                                    "Oeste",
+                                    "Ponte Preta",
+                                    "São Bento"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "No ano da morte da cantora Tina Turner, qual piloto foi campeão da F1?",
+            "image"         :   "assets/images/quiz/12.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/12.jpg",
+            "choices"       :   [
+                                    "Michael Schumacher",
+                                    "Lewis Hamilton",
+                                    "Nico Rosberg",
+                                    "Tina Turner ainda está viva"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "Qual o ponto em comum entre os brasileiros Augusto Farfus e Felipe Massa?",
+            "image"         :   "assets/images/quiz/13.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/13.jpg",
+            "choices"       :   [
+                                    "Os dois nasceram em Curitiba",
+                                    "Os dois moram em Mônaco",
+                                    "Os dois já foram pilotos de testes da Sauber na F1",
+                                    "Os dois já venceram na Corrida de Duplas da Stock Car"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "Quais pilotos foram companheiros do último brasileiro que correu na Scuderia Ferrari?",
+            "image"         :   "assets/images/quiz/14.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/14.jpg",
+            "choices"       :   [
+                                    "Michael Schumacher, Kimi Räikkönen e Fernando Alonso",
+                                    "Michael Schumacher, Rubens Barrichello e Fernando Alonso",
+                                    "Fernando Alonso, Kimi Räikkönen e Eddie Irvine",
+                                    "Fernando Alonso, Jean Alesi e Gerhard Berger"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "Quais os anos em que o piloto da Shell Racing correu temporadas completas na Fórmula 1?",
+            "image"         :   "assets/images/quiz/15.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/15.jpg",
+            "choices"       :   [
+                                    "1998 e 1999",
+                                    "1999 e 2000",
+                                    "1998, 1999 e 2000",
+                                    "2000 e 2001"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "Qual destes ex-pilotos é atualmente o chefão de uma grande categoria internacional?",
+            "image"         :   "assets/images/quiz/16.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/16.jpg",
+            "choices"       :   [
+                                    "Gerhard Berger",
+                                    "Allan McNish",
+                                    "Tom Kristensen",
+                                    "Niki Lauda"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "Qual piloto correu toda a temporada de estreia da Shell Racing na Stock Car?",
+            "image"         :   "assets/images/quiz/17.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/17.jpg",
+            "choices"       :   [
+                                    "Alceu Feldmann",
+                                    "Rodrigo Sperafico",
+                                    "Valdeno Brito",
+                                    "Felipe Maluhy"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "Durante o bicampeonato de Fernando Alonso, quatro equipes venceram corridas. Quais?",
+            "image"         :   "assets/images/quiz/18.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/18.jpg",
+            "choices"       :   [
+                                    "Ferrari, Honda e Renault",
+                                    "Ferrari, McLaren e Renault",
+                                    "Ferrari, Williams e Renault ",
+                                    "Ferrari, Toyota e Renault"
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "Qual era a dupla de pilotos da Shell Racing no ano do título de Rubens Barrichello na Stock Car?",
+            "image"         :   "assets/images/quiz/19.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/19.jpg",
+            "choices"       :   [
+                                    "Átila Abreu e Popó Bueno",
+                                    "Átila Abreu e Ricardo Zonta",
+                                    "Ricardo Zonta e Valdeno Brito",
+                                    "Popó Bueno e Valdeno Brito "
+                                ],
+            "answer"       :   ""
+        },
+        {
+            "question"      :   "No ano em que Fernando Alonso conquistou seu primeiro título na Fórmula 1, qual era a dupla de pilotos da Scuderia Ferrari? ",
+            "image"         :   "assets/images/quiz/20.jpg",
+            "mobile"         :   "assets/images/quiz/mobile/20.jpg",
+            "choices"       :   [
+                                    "Michael Schumacher e Felipe Massa",
+                                    "Michael Schumacher e Rubens Barrichello",
+                                    "Kimi Räikkonen e Felipe Massa",
+                                    "Michael Schumacher e Kimi Räikkönen"
                                 ],
             "answer"       :   ""
         }
+        */
     ];
 
 
-    this.init = function() {
-        
-    };
+    this.init = function() {};
+
+    var r = [0,3,2,1,2,0,0,0,1,0,3,3,1,0,1,0,2,0,3,1];
     function next(){
-        console.log('next');
+        //console.log('next');
         questions = $(elQuestion);
 
         questions.each(function(index,question){
@@ -205,7 +424,7 @@ function Quiz(){
             }
         });
         
-        $(questions[ step - 1 ]).animate({height:'0px'},600,function(){
+        $(questions[ step - 1 ]).animate({height:'0px'},400,function(){
             $(questions[ step - 1 ]).removeClass('active');
             wh(elQuiz, $(questions[ step ]).outerWidth(),$(questions[ step ]).outerHeight(), true);
             
@@ -217,11 +436,17 @@ function Quiz(){
     }
 
     function end(){
-        $(quizend + " .result b").html( ('0' + (step) ).slice(-2) + ' / ' + ('0' + (quiz_question.length)).slice(-2) );
+        var t = 0;
+        quiz_question.forEach(function(value,index){
+            if(r[index]==value.answer){
+                t++;
+            }
+        });
+        $(quizend + " .result b").html( ('0' + (t) ).slice(-2) + ' / ' + ('0' + (quiz_question.length)).slice(-2) );
 
         wh(elQuiz, $(elQuiz).outerWidth(),$(elQuiz).outerHeight(), false);
         $(elQuiz).removeClass('question_on');
-        $(elQuestion).animate({height:'0px'},600,function(){
+        $(elQuestion).animate({height:'0px'},400,function(){
             $(elQuestion).removeClass('active');
             $(elQuiz).css({'height': 'auto', 'width': 'auto'});
         });
@@ -231,7 +456,7 @@ function Quiz(){
 
     function wh(el,w,h,animate){
         if(animate){
-            $(el).animate({'height':h, 'width':w},400,function(){
+            $(el).stop().animate({'height':h, 'width':w},400,function(){
                 $(el).css({'height': 'auto', 'width': 'auto'});
                 
             });
@@ -240,29 +465,38 @@ function Quiz(){
         }
     }
 
+document.getElementsByClassName("example")
     function loadQuestion(step){
         
         $(".question:last-child .quiz_question h2").html( ('0' + (step + 1)).slice(-2) + '.' );
         $(".question:last-child .quiz_question h3").html( quiz_question[step].question );
 
         $(".question:last-child .cover").css('background-image', 'url(' + quiz_question[step].image + ')' );
-        $(".cover-mobile").css('background-image', 'url(' + quiz_question[step].mobile + ')' );
+        $(".question:last-child .cover-mobile").css('background-image', 'url(' + quiz_question[step].mobile + ')' );
 
         $(stepNum).html(('0' + (step + 1)).slice(-2) + ' / ' + ('0' + (quiz_question.length)).slice(-2) );
         
-        var choices="";
+        
+
+        var bt;
+        var ch = document.getElementsByClassName("choices");
+        ch = ch[( ch.length - 1)];
+        ch.innerHTML = "";
         quiz_question[step].choices.forEach(function(value,index){
-            choices += '<button type="button" value="' + index + '">' + value + '</button>';
+            bt = document.createElement("BUTTON");
+            bt.setAttribute("value", index);
+            bt.appendChild(document.createTextNode(listName[index] + value));
+            bt.addEventListener("click",function(){
+                answer(this, step);
+            });
+            ch.appendChild(bt);
         });
-        $(".question:last-child .quiz_question .choices").html(choices);
-        $('button').click(function(){
-            answer(this, step);
-        });
+
     }
 
     function answer(button, step){
+        quiz_question[step].answer = $(button).val();
         if((step+1) < quiz_question.length){
-            quiz_question[step].answer = $(button).val();
             $('<div class="question">' + $(".question.active").html() + '</div>').appendTo(".quiz");
             next();
         }else{
@@ -275,6 +509,7 @@ function Quiz(){
 
 
     car.addEventListener('touchstart', function(event){
+        event.preventDefault(); 
         carEvent(event);
     });
     
@@ -310,12 +545,7 @@ function Quiz(){
             }
             function onTouchMove(event) {
                 event.preventDefault();
-                console.log(event.changedTouches[0].clientX);
-                console.log(shiftX);
-                console.log(dragtostart.getBoundingClientRect().left);
-
                 var newLeft = event.changedTouches[0].clientX - shiftX - dragtostart.getBoundingClientRect().left;
-                
                 move(newLeft);
             }
             
@@ -328,7 +558,7 @@ function Quiz(){
                 document.removeEventListener('mousemove', onMouseMove);
 
                 if(start == true){
-                    console.log('start');
+                    //console.log('start');
                     next();
                 }
             }

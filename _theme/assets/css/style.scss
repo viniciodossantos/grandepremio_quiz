@@ -698,6 +698,50 @@ footer{
 
 
 @media screen and (max-width: 991px) {
+    .icone-busca{
+        display: none;
+    }
+    header{
+        .content-menu-mobile {
+            width: 100%;
+            background: #242424;
+            color: #fff;
+            z-index: 4;
+            top: 50px;
+            position: fixed;
+            display: block;
+            overflow: auto;
+            max-width: 420px;
+            .assine-mobile {
+                background: #80161b;
+                font-weight: bold;
+                text-transform: uppercase;
+                padding: 15px 20px;
+            }
+            .spacer-mobile {
+                padding: 0 20px;
+            }
+            ul {
+                padding: 0;
+                list-style-type: none;
+                
+            }
+            a {
+                color: #fff;
+                font-size: 1.5vh;
+                li {
+                    padding: 15px 0;
+                    text-transform: uppercase;
+                    border-top: 1px solid #3a3a3a;
+                }
+                &.first-child li {
+                    border-top: none;
+                }
+            }
+        }
+    }
+
+
     .quiz{
         &::before{
             padding-top: 0px;
