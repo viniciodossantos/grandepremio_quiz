@@ -185,7 +185,7 @@ function Quiz(){
                                     "Thiago Meneghel"
                                 ],
             "answer"       :   ""
-        }/*,
+        },
         {
             "question"      :   "Quantas equipes Sebastian Vettel defendeu na F1 até 2018?",
             "image"         :   "assets/images/quiz/3.jpg",
@@ -402,7 +402,7 @@ function Quiz(){
                                 ],
             "answer"       :   ""
         }
-        */
+        
     ];
 
 
