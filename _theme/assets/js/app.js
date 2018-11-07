@@ -404,11 +404,19 @@ function Quiz(){
         }
         
     ];
+    var tq = quiz_question.length;
 
 
-    this.init = function() {};
+    this.init = function() {
+        preloadImage(quiz_question[0].mobile);
+        preloadImage(quiz_question[0].image);
+    };
 
     var r = [0,3,2,1,2,0,0,0,1,0,3,3,1,0,1,0,2,0,3,1];
+    function preloadImage(url){
+        var img=new Image();
+        img.src=url;
+    }
     function next(){
         //console.log('next');
         questions = $(elQuestion);
@@ -432,6 +440,15 @@ function Quiz(){
 
         });
         $(questions[ step ]).addClass('active');
+
+        if(step<tq){
+            preloadImage(quiz_question[step].mobile);
+            preloadImage(quiz_question[step].image);
+        }
+        
+        
+        
+       
 
     }
 
@@ -566,7 +583,7 @@ document.getElementsByClassName("example")
     }
    
 
-    // Start quiz
+    // Start quiz e pre load da primeira imagem
     this.init(); 
 }
 
